@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Placement Content</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(25px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 480px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🚀 Add Placement Resource</h2>
+
+    <form method="POST">
+
+        <!-- TITLE -->
+        <div class="input-group">
+    <select name="title" required>
+        <option value="">Select Section</option>
+
+        {% if category == 'aptitude' %}
+            <option value="Logical">Logical</option>
+            <option value="Quantitative">Quantitative</option>
+            <option value="Verbal">Verbal</option>
+        {% endif %}
+
+        {% if category == 'Technical' %}
+            <option value="OS">Operating System</option>
+            <option value="DBMS">Database</option>
+            <option value="Coding">Coding</option>
+        {% endif %}
+    </select>
+</div>
+
+        <!-- CONTENT TYPE -->
+        <div class="input-group">
+            <select name="content_type" required>
+                <option value="">Select Content Type</option>
+                <option value="PDF">📄 PDF Resource</option>
+                <option value="YouTube">▶ YouTube Video</option>
+            </select>
+        </div>
+
+        <!-- LINK -->
+        <div class="input-group">
+            <input type="text" name="content_link" placeholder="Enter PDF / YouTube Link" required>
+        </div>
+
+        <button type="submit">✨ Add Content</button>
+
+    </form>
+
+    <a href="/select_category" class="back">⬅ Back to Categories</a>
+</div>
+
+</body>
+</html>

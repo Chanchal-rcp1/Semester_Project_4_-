@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .header{
+            width:100%;
+            padding:20px;
+            text-align:center;
+            font-size:28px;
+            font-weight:bold;
+            background:white;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            color:#333;
+        }
+
+        .container{
+            margin-top:60px;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.15);
+            width:400px;
+            text-align:center;
+        }
+
+        h2{
+            margin-bottom:25px;
+            color:#444;
+        }
+
+        .btn{
+            display:block;
+            margin:15px 0;
+            padding:14px;
+            border-radius:12px;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:500;
+            transition:0.3s ease;
+            color:white;
+        }
+
+        .add{
+            background: linear-gradient(45deg,#42a5f5,#478ed1);
+        }
+
+        .manage{
+            background: linear-gradient(45deg,#66bb6a,#43a047);
+        }
+
+        .students{
+            background: linear-gradient(45deg,#ffa726,#fb8c00);
+        }
+
+        .logout{
+            background: linear-gradient(45deg,#ef5350,#e53935);
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+            box-shadow:0 6px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="header">
+    Placement Portal - Admin Panel
+</div>
+
+<div class="container">
+    <h2>Welcome Admin 👋</h2>
+
+    <a href="/select_category" class="btn add">➕ Add Content</a>
+    <a href="/manage_content" class="btn manage">📋 Manage Content</a>
+    <a href="/view_students" class="btn students">👩‍🎓 View Students</a>
+    <a href="/" class="btn logout">🚪 Logout</a>
+</div>
+
+</body>
+</html>

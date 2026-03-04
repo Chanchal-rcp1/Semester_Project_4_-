@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Year Wise Roadmap</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 80%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .year-card {
+            background: #f8f9fc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .year-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            display: none;
+            padding-top: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4e73df;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎯 Year Wise Roadmap</h1>
+
+    <div class="year-card" onclick="toggleContent(this)">
+        🎓 First Year
+        <div class="content">
+            <ul>
+                <li>Learn C / Python</li>
+                <li>Basic DSA</li>
+                <li>Git & GitHub</li>
+                <li>Mini Project</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="year-card" onclick="toggleContent(this)">
+        🎓 Second Year
+        <div class="content">
+            <ul>
+                <li>Advanced DSA</li>
+                <li>OOPS Concepts</li>
+                <li>DBMS Basics</li>
+                <li>2 Major Projects</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="year-card" onclick="toggleContent(this)">
+        🎓 Third / Final Year
+        <div class="content">
+            <ul>
+                <li>Internship Preparation</li>
+                <li>System Design Basics</li>
+                <li>Mock Interviews</li>
+                <li>Placement Preparation</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="/technical">⬅ Back</a>
+</div>
+
+<script>
+function toggleContent(element) {
+    let content = element.querySelector(".content");
+    content.style.display = content.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>

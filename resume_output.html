@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Resume</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            padding: 40px;
+        }
+
+        .resume {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            width: 700px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .section {
+            margin-top: 25px;
+        }
+
+        .section h3 {
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+            color: #444;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume">
+    <h1>{{ name }}</h1>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Phone:</strong> {{ phone }}</p>
+
+    <div class="section">
+        <h3>Education</h3>
+        <p>{{ education }}</p>
+    </div>
+
+    <div class="section">
+        <h3>Skills</h3>
+        <p>{{ skills }}</p>
+    </div>
+
+    <a href="/resume_form" class="btn">Edit Resume</a>
+    <a href="/student_dashboard" class="btn">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aptitude Skills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 40px;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px 60px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.25);
+        }
+
+        .content-box {
+            margin: 60px auto;
+            width: 70%;
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 25px;
+            display: none;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .study-buttons {
+            margin-top: 30px;
+        }
+
+        .study-buttons button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .study-buttons button:hover {
+            transform: scale(1.05);
+        }
+
+        .content-display {
+            margin-top: 40px;
+            display: none;
+        }
+
+        .content-card {
+            background: white;
+            color: black;
+            margin: 15px auto;
+            padding: 20px;
+            width: 60%;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .content-card:hover {
+            transform: scale(1.05);
+        }
+
+        .content-card a {
+            text-decoration: none;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>🧠 Aptitude Skills</h1>
+<p>Select a category to understand its importance</p>
+
+<div class="categories">
+    <div class="category-card" onclick="showLogical()">🔎 Logical</div>
+    <div class="category-card">📊 Quantitative</div>
+    <div class="category-card">✏ Verbal</div>
+</div>
+
+<!-- Logical Section -->
+<div id="logical-section" class="content-box">
+    <h2>🔎 Logical Reasoning</h2>
+    <p>
+        Improves analytical thinking and structured problem-solving ability required in placement exams.
+    </p>
+
+    <div class="study-buttons">
+        <button onclick="showAll()">📘 Show All</button>
+        <button onclick="showPDF()">📄 View PDFs</button>
+        <button onclick="showYouTube()">🎥 View YouTube Videos</button>
+    </div>
+
+    <div id="content-display" class="content-display">
+        {% for item in contents %}
+        <div class="content-card" data-type="{{ item.content_type }}">
+            <h3>{{ item.title }}</h3>
+
+            {% if item.content_type == "PDF" %}
+                <a href="{{ item.content_link }}" target="_blank">View PDF</a>
+            {% elif item.content_type == "YouTube" %}
+                <a href="{{ item.content_link }}" target="_blank">Watch Video</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<script>
+
+function showLogical() {
+    let section = document.getElementById("logical-section");
+    section.style.display = "block";
+    setTimeout(() => {
+        section.style.opacity = "1";
+    }, 100);
+}
+
+function showAll() {
+    let display = document.getElementById("content-display");
+    display.style.display = "block";
+
+    let cards = document.querySelectorAll(".content-card");
+    cards.forEach(card => {
+        card.style.display = "block";
+    });
+}
+
+function showPDF() {
+    let display = document.getElementById("content-display");
+    display.style.display = "block";
+
+    let cards = document.querySelectorAll(".content-card");
+    cards.forEach(card => {
+        if (card.dataset.type === "PDF") {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+function showYouTube() {
+    let display = document.getElementById("content-display");
+    display.style.display = "block";
+
+    let cards = document.querySelectorAll(".content-card");
+    cards.forEach(card => {
+        if (card.dataset.type === "YouTube") {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>
